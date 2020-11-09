@@ -7,4 +7,5 @@ const emailRouter = Router()
 
 emailRouter.post('/create', formMiddleware, emailController.genericEmail)
 
+
 module.exports = emailRouter
