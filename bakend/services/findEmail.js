@@ -1,12 +1,12 @@
 const dnsPromises = require('dns').promises;
 
-const mxExists = email => {
-    return new Promise ((res, rej) => {
-        const hostname = email.split("@")[1];
-
+const mxExists =  email => {
+    return  new Promise((res, rej) => {
         try {
+             const hostname = email.split("@")[1];
+
             dnsPromises.resolveMx(hostname).then(addresses => {
-                if (addresses && addresses.length > 0) {
+                if (addresses && addresses.length) {
                     addresses[0].exchange ? res(true) : res(false);
                 }
             })
@@ -22,6 +22,7 @@ const mxExists = email => {
         }
     });
 }
+
 
 module.exports = {
     mxExists

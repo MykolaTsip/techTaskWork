@@ -5,7 +5,7 @@ const {formMiddleware} = require('../middlewares')
 
 const emailRouter = Router()
 
-emailRouter.post('/create', formMiddleware, emailController.genericEmail)
+emailRouter.post('/', formMiddleware, emailController.genericEmail)
 
 
 module.exports = emailRouter
